@@ -19,51 +19,9 @@ Latency is **local in-process ANN on an Apple M4 Pro**. It does not include Mong
 
 ### p99 latency by model
 
-Matches the canvas bar chart: p99 (ms) at the 95% recall operating point.
+Grouped bar chart from the canvas: p99 (ms) at the 95% recall operating point.
 
-```mermaid
-xychart-beta
-    title p99 latency at 95% recall (ms)
-    x-axis [50 RPS, 75 RPS, 100 RPS]
-    y-axis "p99 (ms)" 0 --> 2.6
-    bar [2.468, 1.789, 1.695]
-    line [1.154, 1.598, 1.548]
-```
-
-- Bars: BGE-large-en-v1.5 p99
-- Line: voyage-4-large p99
-
-<svg viewBox="0 0 720 280" width="100%" role="img" aria-label="Grouped bar chart of p99 latency in milliseconds at 50, 75, and 100 requests per second for BGE-large-en-v1.5 and voyage-4-large">
-  <rect x="0" y="0" width="720" height="280" fill="#0d1117"/>
-  <text x="360" y="28" fill="#e6edf3" font-size="15" font-family="ui-sans-serif,system-ui,sans-serif" text-anchor="middle">p99 latency at 95% recall (ms)</text>
-  <text x="28" y="150" fill="#8b949e" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif" text-anchor="middle" transform="rotate(-90 28 150)">p99 (ms)</text>
-  <line x1="64" y1="48" x2="64" y2="220" stroke="#30363d"/>
-  <line x1="64" y1="220" x2="680" y2="220" stroke="#30363d"/>
-  <line x1="64" y1="177" x2="680" y2="177" stroke="#21262d"/>
-  <line x1="64" y1="134" x2="680" y2="134" stroke="#21262d"/>
-  <line x1="64" y1="91" x2="680" y2="91" stroke="#21262d"/>
-  <text x="56" y="224" fill="#8b949e" font-size="10" font-family="ui-sans-serif,system-ui,sans-serif" text-anchor="end">0</text>
-  <text x="56" y="181" fill="#8b949e" font-size="10" font-family="ui-sans-serif,system-ui,sans-serif" text-anchor="end">0.65</text>
-  <text x="56" y="138" fill="#8b949e" font-size="10" font-family="ui-sans-serif,system-ui,sans-serif" text-anchor="end">1.30</text>
-  <text x="56" y="95" fill="#8b949e" font-size="10" font-family="ui-sans-serif,system-ui,sans-serif" text-anchor="end">1.95</text>
-  <text x="56" y="56" fill="#8b949e" font-size="10" font-family="ui-sans-serif,system-ui,sans-serif" text-anchor="end">2.60</text>
-  <!-- 50 RPS: BGE 2.468, Voyage 1.154 -->
-  <rect x="118" y="56.6" width="44" height="163.4" fill="#388bfd"/>
-  <rect x="168" y="143.7" width="44" height="76.3" fill="#3fb950"/>
-  <text x="165" y="238" fill="#8b949e" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif" text-anchor="middle">50 RPS</text>
-  <!-- 75 RPS: BGE 1.789, Voyage 1.598 -->
-  <rect x="318" y="101.6" width="44" height="118.4" fill="#388bfd"/>
-  <rect x="368" y="114.3" width="44" height="105.7" fill="#3fb950"/>
-  <text x="365" y="238" fill="#8b949e" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif" text-anchor="middle">75 RPS</text>
-  <!-- 100 RPS: BGE 1.695, Voyage 1.548 -->
-  <rect x="518" y="107.8" width="44" height="112.2" fill="#388bfd"/>
-  <rect x="568" y="117.6" width="44" height="102.4" fill="#3fb950"/>
-  <text x="565" y="238" fill="#8b949e" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif" text-anchor="middle">100 RPS</text>
-  <rect x="230" y="256" width="10" height="10" fill="#388bfd"/>
-  <text x="246" y="265" fill="#e6edf3" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">BGE-large-en-v1.5</text>
-  <rect x="400" y="256" width="10" height="10" fill="#3fb950"/>
-  <text x="416" y="265" fill="#e6edf3" font-size="11" font-family="ui-sans-serif,system-ui,sans-serif">voyage-4-large</text>
-</svg>
+![p99 latency at 95 percent recall](docs/p99-latency.svg)
 
 ### Latency (ms) at 95% recall, `ef_search=16`
 
