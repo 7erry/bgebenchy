@@ -15,7 +15,19 @@ Same corpus, cosine HNSW (usearch, M=16, `ef_construction=128`, `ef_search=16`).
 | Index build | 0.24 s | 0.22 s |
 | HNSW memory | 32.1 MB | 32.1 MB |
 
-Latency is **local in-process ANN on an Apple M4 Pro**. It does not include MongoDB, mongot, network, or Lucene filter / full-text cost.
+Latency is **local in-process ANN on the host below**. It does not include MongoDB, mongot, network, or Lucene filter / full-text cost.
+
+### Host machine
+
+These stored results were generated on this machine:
+
+| | |
+|---|---|
+| Model | MacBook Pro (Mac16,7) |
+| Chip | Apple M4 Pro, 14 cores (10 performance / 4 efficiency) |
+| Memory | 24 GB |
+| OS | macOS 26.6.1 (25G76), Darwin 25.6.0 |
+| Runtime | Python 3.12, usearch HNSW, single-thread search |
 
 ### p99 latency by model
 
