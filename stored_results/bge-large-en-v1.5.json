@@ -1,0 +1,239 @@
+{
+  "model": "BAAI/bge-large-en-v1.5",
+  "model_url": "https://huggingface.co/BAAI/bge-large-en-v1.5",
+  "documents": 10000,
+  "queries": 200,
+  "dimensions": 1024,
+  "vector_dtype": "fp16",
+  "metric": "cosine",
+  "k": 10,
+  "target_recall": 0.95,
+  "indexed_filter_fields": 23,
+  "fulltext_fields": 3,
+  "filter_field_paths": [
+    "data.productNumber",
+    "data.vendorName",
+    "data.vendorPartNumber",
+    "data.UserTypeID",
+    "data.ParentID",
+    "data.MotionId",
+    "data.StepId",
+    "data.attributes.UNSPSC",
+    "data.attributes.ManufacturerID",
+    "data.attributes.mfr_name_NM",
+    "data.attributes.product_type_LOV",
+    "data.attributes.Active",
+    "data.attributes.WebStatus",
+    "data.attributes.ItemUOM",
+    "data.attributes.PGC_CODE",
+    "data.attributes.bearing_type_LOV",
+    "data.attributes.cage_type_LOV",
+    "data.attributes.parent_id_ID",
+    "data.attributes.eCOS_PGC",
+    "data.attributes.Prop65",
+    "data.attributes.company_name",
+    "data.attributes.ItemNumber",
+    "meta.source"
+  ],
+  "fulltext_field_paths": [
+    "data.attributes.WebProductDescription",
+    "data.attributes.DerivedProductDescription",
+    "meta.descriptionKeywords"
+  ],
+  "hnsw": {
+    "connectivity_m": 16,
+    "ef_construction": 128,
+    "ef_search": 16,
+    "implementation": "usearch",
+    "dtype": "f16"
+  },
+  "index_build_seconds": 0.23542512500000612,
+  "index_memory_bytes": 33688128,
+  "recall_sweep": [
+    {
+      "ef_search": 16,
+      "num_candidates": 16,
+      "recall_at_10": 0.9545
+    }
+  ],
+  "operating_point": {
+    "ef_search": 16,
+    "num_candidates": 16,
+    "recall_at_10": 0.9545
+  },
+  "latency": [
+    {
+      "target_rps": 50,
+      "achieved_rps": 50.05,
+      "requests": 1001,
+      "late_starts": 0,
+      "late_start_ratio": 0.0,
+      "p50_ms": 0.2705829999740672,
+      "p90_ms": 0.6135410000069896,
+      "p95_ms": 0.7910830000810165,
+      "p99_ms": 2.468291000013778,
+      "mean_ms": 0.367900590409344,
+      "max_ms": 3.0475840000008247
+    },
+    {
+      "target_rps": 75,
+      "achieved_rps": 75.05,
+      "requests": 1501,
+      "late_starts": 0,
+      "late_start_ratio": 0.0,
+      "p50_ms": 0.2597080000441565,
+      "p90_ms": 0.6059170000298764,
+      "p95_ms": 0.7746669999733058,
+      "p99_ms": 1.7888340000808967,
+      "mean_ms": 0.34412733444383986,
+      "max_ms": 3.3763339999950404
+    },
+    {
+      "target_rps": 100,
+      "achieved_rps": 100.05,
+      "requests": 2001,
+      "late_starts": 0,
+      "late_start_ratio": 0.0,
+      "p50_ms": 0.24474999997892155,
+      "p90_ms": 0.4727499999717111,
+      "p95_ms": 0.7152919999953156,
+      "p99_ms": 1.6952090001041142,
+      "mean_ms": 0.3191727526228064,
+      "max_ms": 4.073209000011957
+    }
+  ],
+  "atlas_indexes": {
+    "vector": {
+      "name": "motion_bge_large_vector",
+      "type": "vectorSearch",
+      "definition": {
+        "fields": [
+          {
+            "type": "vector",
+            "path": "embedding",
+            "numDimensions": 1024,
+            "similarity": "cosine",
+            "quantization": "none"
+          },
+          {
+            "type": "filter",
+            "path": "data.productNumber"
+          },
+          {
+            "type": "filter",
+            "path": "data.vendorName"
+          },
+          {
+            "type": "filter",
+            "path": "data.vendorPartNumber"
+          },
+          {
+            "type": "filter",
+            "path": "data.UserTypeID"
+          },
+          {
+            "type": "filter",
+            "path": "data.ParentID"
+          },
+          {
+            "type": "filter",
+            "path": "data.MotionId"
+          },
+          {
+            "type": "filter",
+            "path": "data.StepId"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.UNSPSC"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.ManufacturerID"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.mfr_name_NM"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.product_type_LOV"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.Active"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.WebStatus"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.ItemUOM"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.PGC_CODE"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.bearing_type_LOV"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.cage_type_LOV"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.parent_id_ID"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.eCOS_PGC"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.Prop65"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.company_name"
+          },
+          {
+            "type": "filter",
+            "path": "data.attributes.ItemNumber"
+          },
+          {
+            "type": "filter",
+            "path": "meta.source"
+          }
+        ]
+      }
+    },
+    "fulltext": {
+      "name": "motion_bge_large_fulltext",
+      "type": "search",
+      "definition": {
+        "mappings": {
+          "dynamic": false,
+          "fields": {
+            "data.attributes.WebProductDescription": {
+              "type": "string",
+              "analyzer": "lucene.standard"
+            },
+            "data.attributes.DerivedProductDescription": {
+              "type": "string",
+              "analyzer": "lucene.standard"
+            },
+            "meta.descriptionKeywords": {
+              "type": "string",
+              "analyzer": "lucene.standard"
+            }
+          }
+        }
+      }
+    }
+  },
+  "hardware": "Apple M4 Pro, in-process usearch HNSW (not Atlas Search Nodes)",
+  "note": "Latency is local in-process ANN search on fp16 vectors. Atlas M0 cannot host 100k x 1024-d documents; use these numbers as a model/index baseline, not as Atlas p99."
+}

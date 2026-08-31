@@ -1,0 +1,7 @@
+numpy>=2.0
+tqdm>=4.66
+usearch>=2.16
+fastembed>=0.7
+onnxruntime>=1.19
+voyageai>=0.3
+
